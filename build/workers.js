@@ -14,7 +14,7 @@ var workers = module.exports =  {
 
 module.exports.supported = Object.keys(workers)
   .filter(function (w) { 
-    return w !== 'php' && w !== 'xquery'; 
+    return w !== 'xquery'; 
   });
 
 function getWorkers(lang) {

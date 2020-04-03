@@ -16,7 +16,7 @@ function minify(code) {
 }
 
 module.exports = function () {
-  // 'php', 'xquery' not supported since they cannot be inlined even when minified before stringify
+  // 'xquery' not supported since they cannot be inlined even when minified before stringify
   workers.supported
     .forEach(function (worker) {
       var filename = worker.toLowerCase() + '.js';
