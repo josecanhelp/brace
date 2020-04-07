@@ -13639,6 +13639,12 @@ Editor.$uid = 0;
         var wrap = this.session.$useWrapMode;
         var lastRow = (delta.start.row == delta.end.row ? delta.end.row : Infinity);
         this.renderer.updateLines(delta.start.row, lastRow, wrap);
+        if(lastRow === Infinity) {
+          this.replace("", {
+              needle: "^\\s{0,3}(?:[*+-])\\s+\n",
+              regExp: true
+          });
+        }
 
         this._signal("change", delta);
         this.$cursorChange();
